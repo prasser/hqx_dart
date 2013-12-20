@@ -155,11 +155,6 @@ class Hqx {
     
     for (int i=0; i<source.data.length; i+=4){
       
-      //int val = source.data[i+2];
-      //val    |= source.data[i+1] << 8;
-      //val    |= source.data[i]   << 16;
-      //val    |= source.data[i+3] << 24;
-
       int val = source.data[i+3];
       val    |= source.data[i+0] << 8;
       val    |= source.data[i+1] << 16;
@@ -181,11 +176,6 @@ class Hqx {
       destination.data[idx++] = (source[i] >> 16) & 0x000000FF;
       destination.data[idx++] = (source[i] >> 24) & 0x000000FF;
       destination.data[idx++] = (source[i] >> 0 ) & 0x000000FF;
-      
-      //destination.data[idx++] = (source[i] >> 16) & 0x000000FF;
-      //destination.data[idx++] = (source[i] >> 8 ) & 0x000000FF;
-      //destination.data[idx++] = (source[i]      ) & 0x000000FF;
-      //destination.data[idx++] = (source[i] >> 24) & 0x000000FF;
    }
   }
 
@@ -231,13 +221,7 @@ class Hqx {
    * Internal 2x method
    */
   static void _internal_hq2x_32_rb_default(ImageData source, ImageData destination){
-    
-      if (destination.width != 2 * source.width) {
-        throw new Error();
-      } else if (destination.height != 2 * source.height) {
-        throw new Error();
-      }
-      
+
       List<int> sPixels = _readPixels(source);
       List<int> dPixels = new List<int>(sPixels.length * 4);
       Hqx_2x._hq2x_32_rb_default(sPixels, dPixels, source.width, source.height);
@@ -250,13 +234,7 @@ class Hqx {
   static void _internal_hq2x_32_rb(ImageData source, ImageData destination,
                     int trY, int trU, int trV, int trA,
                     bool wrapX, bool wrapY) {
-    
-    if (destination.width != 2 * source.width) {
-      throw new Error();
-    } else if (destination.height != 2 * source.height) {
-      throw new Error();
-    }
-    
+
     List<int> sPixels = _readPixels(source);
     List<int> dPixels = new List<int>(sPixels.length * 4);
     Hqx_2x._hq2x_32_rb( sPixels, dPixels, source.width, source.height,
@@ -268,12 +246,6 @@ class Hqx {
    * Internal 3x method
    */
   static void _internal_hq3x_32_rb_default(ImageData source, ImageData destination){
-    
-      if (destination.width != 3 * source.width) {
-        throw new Error();
-      } else if (destination.height != 3 * source.height) {
-        throw new Error();
-      }
 
       List<int> sPixels = _readPixels(source);
       List<int> dPixels = new List<int>(sPixels.length * 9);
@@ -288,12 +260,6 @@ class Hqx {
                     int trY, int trU, int trV, int trA,
                     bool wrapX, bool wrapY) {
     
-    if (destination.width != 3 * source.width) {
-      throw new Error();
-    } else if (destination.height != 3 * source.height) {
-      throw new Error();
-    }
-    
     List<int> sPixels = _readPixels(source);
     List<int> dPixels = new List<int>(sPixels.length * 9);
     Hqx_3x._hq3x_32_rb( sPixels, dPixels, source.width, source.height,
@@ -305,12 +271,6 @@ class Hqx {
    * Internal 4x method
    */
   static void _internal_hq4x_32_rb_default(ImageData source, ImageData destination){
-    
-      if (destination.width != 4 * source.width) {
-        throw new Error();
-      } else if (destination.height != 4 * source.height) {
-        throw new Error();
-      }
 
       List<int> sPixels = _readPixels(source);
       List<int> dPixels = new List<int>(sPixels.length * 16);
@@ -324,12 +284,6 @@ class Hqx {
   static void _internal_hq4x_32_rb(ImageData source, ImageData destination,
                     int trY, int trU, int trV, int trA,
                     bool wrapX, bool wrapY) {
-    
-    if (destination.width != 4 * source.width) {
-      throw new Error();
-    } else if (destination.height != 4 * source.height) {
-      throw new Error();
-    }
 
     List<int> sPixels = _readPixels(source);
     List<int> dPixels = new List<int>(sPixels.length * 16);
