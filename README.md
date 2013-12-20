@@ -12,7 +12,7 @@ hqxSharp for C#, which itself is a port of the original hqx C project.
 Usage
 ========
 
-´´´dart
+```dart
 ImageElement image = new ImageElement(src: "mushroom.png");
 image.onLoad.listen((Event e){
 
@@ -25,4 +25,4 @@ image.onLoad.listen((Event e){
     
 	Hqx.deinit();
 }
-´´´
+```
