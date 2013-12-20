@@ -26,3 +26,6 @@ image.onLoad.listen((Event e){
 	Hqx.deinit();
 }
 ```
+
+Example
+========
